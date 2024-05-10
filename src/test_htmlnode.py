@@ -3,6 +3,7 @@ import unittest
 from htmlnode import HTMLNode
 from htmlnode import LeafNode
 from htmlnode import ParentNode
+from textnode import TextNode
 
 
 class TestHTMLNode(unittest.TestCase):
@@ -11,7 +12,7 @@ class TestHTMLNode(unittest.TestCase):
         expected_output= ' href="https://www.google.com" target="_blank"'
         self.assertEqual(node.props_to_html(), expected_output)
 
-class TestLeafNone(unittest.TestCase):
+class TestLeafNode(unittest.TestCase):
     def test_none_eq(self):
         node = LeafNode("p", "This is a paragraph of text.")
         expected_output= '<p>This is a paragraph of text.</p>'
@@ -22,7 +23,7 @@ class TestLeafNone(unittest.TestCase):
         expected_output= '<a href="https://www.google.com">Click me!</a>'
         self.assertEqual(node.to_html(), expected_output)
 
-class TestLeafNone(unittest.TestCase):
+class TestParentNode(unittest.TestCase):
     def test_eq(self):
         node = ParentNode(
     "p",
@@ -49,3 +50,4 @@ class TestLeafNone(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
