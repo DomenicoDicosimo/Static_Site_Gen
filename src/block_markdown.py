@@ -73,8 +73,8 @@ def code_block_to_HTMLNode(block):
     return ParentNode("pre",[code])
     
 def quote_block_to_HTMLNode(block):
-    lines = block.split("/n")
-    new_lines = {}
+    lines = block.split("\n")
+    new_lines = []
     for line in lines:
         if not line.startswith(">"):
             raise ValueError("Invalid quote block")
